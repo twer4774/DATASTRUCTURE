@@ -1,29 +1,51 @@
 class Queue:
+    def __init__(self):
+        self.items = []
+        self.head = 0
+
     # Data insert
     def enqueue(self, data):
-        raise NotImplemented
+        self.items.append(data)
 
-    # Data delet
+    # Data delete
     def dequeue(self):
-        raise NotImplemented
+        self.isEmpty()
+        self.items.reverse()
+        self.items.pop()
+        self.items.reverse()
 
-    # Data peek
+
+
+    #Peek
     def peek(self):
-        raise NotImplemented
+        return self.items[len(self.items)-1]
+
+    #count
+    def count(self):
+        return len(self.items)
 
     # isEmpty?
     def isEmpty(self):
-        raise NotImplemented
+        if self.count() == True:
+            print("Empty")
 
-    # isFull?
-    def isFull(self):
-        raise NotImplemented
 
-    # print list
+    # print
     def display(self):
-        raise NotImplemented
+        print(pyQueue.items)
+
 
 pyQueue = Queue()
 pyQueue.enqueue(3)
+pyQueue.enqueue(4)
 pyQueue.enqueue(5)
+pyQueue.display()
+
+pyQueue.dequeue()
+pyQueue.dequeue()
+pyQueue.display()
+
+pyQueue.dequeue()
+
+
 
